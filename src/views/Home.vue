@@ -3,10 +3,8 @@ import { ref, onMounted } from 'vue';
 import MapView from '../components/MapView.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Toolbar from '../components/Toolbar.vue';
-import { useLayersStore } from '../stores/layers';
 
 const sidebar = ref(true);
-const layersStore = useLayersStore();
 
 const toggleSidebar = () => {
   sidebar.value = !sidebar.value;
