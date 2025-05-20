@@ -4,7 +4,6 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import Home from './views/Home.vue'
-import { ref } from 'vue';
 
 const routes = [
   { path: '/', component: Home }
