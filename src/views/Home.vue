@@ -21,7 +21,7 @@ onMounted(() => {
   <div class="home-container">
     <header class="app-header">
       <div class="logo">
-        <h1>Vue Mapshaper</h1>
+        <h1>UCI Mapshaper</h1>
       </div>
       <Toolbar @toggle-sidebar="toggleSidebar" />
     </header>
