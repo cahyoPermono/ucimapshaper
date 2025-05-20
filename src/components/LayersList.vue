@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 import { useLayersStore } from '../stores/layers';
 
 const layersStore = useLayersStore();
@@ -9,6 +9,11 @@ const newLayerName = ref('');
 const startEditingName = (layerId: string, currentName: string) => {
   editingLayerName.value = layerId;
   newLayerName.value = currentName;
+  // Fokus ke input saat mulai edit
+  nextTick(() => {
+    const input = document.querySelector('.name-input') as HTMLInputElement;
+    if (input) input.focus();
+  });
 };
 
 const saveLayerName = (layerId: string) => {
@@ -62,7 +67,6 @@ const removeLayer = (layerId: string) => {
             @keyup.esc="cancelEditingName"
             @blur="saveLayerName(layer.id)"
             ref="nameInput"
-            v-focus
           />
         </template>
         <span 
